@@ -9,6 +9,7 @@ class CommandLibrary < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"ccm"), "./cmd"
+    man1.install "ccm.1"
   end
 
   test do
